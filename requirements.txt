@@ -1,0 +1,16 @@
+Django
+numpy
+pandas
+scipy
+scikit-learn
+sympy
+mpmath
+tqdm
+networkx
+torch
+torchvision
+torchaudio
+torch-geometric
+matplotlib
+seaborn
+Pillow
