@@ -1,0 +1,30 @@
+{% extends 'admin/adminbase.html' %}
+
+{% block content %}
+<section id="prediction-graphs" class="section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Prediction Distribution</h2>
+  </div>
+
+  <div class="container" data-aos="fade" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="200">
+        <h3>Pie Chart</h3>
+        {% if pie_chart %}
+          <img src="data:image/png;base64,{{ pie_chart }}" class="img-fluid rounded shadow" alt="Prediction Pie Chart">
+        {% else %}
+          <p>No data available to generate the pie chart.</p>
+        {% endif %}
+      </div>
+      <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="300">
+        <h3>Bar Chart</h3>
+        {% if bar_chart %}
+          <img src="data:image/png;base64,{{ bar_chart }}" class="img-fluid rounded shadow" alt="Prediction Bar Chart">
+        {% else %}
+          <p>No data available to generate the bar chart.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

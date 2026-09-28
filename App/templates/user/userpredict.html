@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card shadow-lg mt-5 mx-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <h3 class="card-title text-center mb-4">Predict by Hash Link</h3>
+
+    {% if error %}
+      <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    {% if prediction_result %}
+      <div class="alert alert-success">
+        Predicted Label: <strong>{{ prediction_result }}</strong>
+      </div>
+    {% endif %}
+
+    <form method="POST" class="text-center">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label fw-bold">Hash Link</label>
+        <input type="text" name="hash_link" class="form-control text-center" placeholder="Enter hash like USER_001" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Predict</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
